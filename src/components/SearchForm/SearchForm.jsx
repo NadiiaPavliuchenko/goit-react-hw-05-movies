@@ -4,11 +4,11 @@ import {
   StyledSearchForm,
 } from './SearchForm.styled';
 
-const SearchForm = props => {
+const SearchForm = ({ onSubmit }) => {
   const handleFormSubmit = e => {
     e.preventDefault();
     const query = e.target.querySelector('input').value;
-    props.onSubmit(query);
+    onSubmit(query);
     e.target.reset();
   };
 
