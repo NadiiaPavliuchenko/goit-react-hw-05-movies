@@ -13,6 +13,7 @@ import {
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [currentMovie, setCurrentMovie] = useState({});
+  const location = useLocation();
 
   useEffect(() => {
     const getDetails = async () => {
@@ -27,7 +28,6 @@ const MovieDetails = () => {
     getDetails();
   }, [movieId]);
 
-  const location = useLocation();
   const backLink = location.state?.from ?? '/';
 
   const releaseDate = Date.parse(currentMovie.release_date);

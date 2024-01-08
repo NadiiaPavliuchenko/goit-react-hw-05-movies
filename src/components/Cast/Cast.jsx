@@ -8,6 +8,7 @@ import {
   ActorName,
   CastContainer,
   CharacterName,
+  NoCastMessage,
 } from './Cast.styled';
 
 const Cast = () => {
@@ -33,7 +34,7 @@ const Cast = () => {
   return (
     <CastContainer>
       <ActorList>
-        {cast.length > 0 &&
+        {cast.length > 0 ? (
           cast.map(actor => (
             <ActorCard key={actor.id}>
               <ActorImage
@@ -48,7 +49,10 @@ const Cast = () => {
               <ActorName>{actor.name}</ActorName>
               <CharacterName>Character: {actor.character}</CharacterName>
             </ActorCard>
-          ))}
+          ))
+        ) : (
+          <NoCastMessage>We have no cast for this movie</NoCastMessage>
+        )}
       </ActorList>
     </CastContainer>
   );

@@ -45,3 +45,8 @@ export const CharacterName = styled.p`
   margin-top: 5px;
   color: #777;
 `;
+
+export const NoCastMessage = styled.p`
+  color: #777;
+  margin-top: 20px;
+`;
